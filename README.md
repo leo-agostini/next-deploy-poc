@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+ # AWS TypeScript Pulumi Template
 
-## Getting Started
+ A minimal Pulumi template for provisioning AWS infrastructure using TypeScript. This template creates an Amazon S3 bucket and exports its name.
 
-First, run the development server:
+ ## Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ - Pulumi CLI (>= v3): https://www.pulumi.com/docs/get-started/install/
+ - Node.js (>= 14): https://nodejs.org/
+ - AWS credentials configured (e.g., via `aws configure` or environment variables)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ ## Getting Started
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ 1. Initialize a new Pulumi project:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    ```bash
+    pulumi new aws-typescript
+    ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+    Follow the prompts to set your:
+    - Project name
+    - Project description
+    - AWS region (defaults to `us-east-1`)
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ 2. Preview and deploy your infrastructure:
 
-## Learn More
+    ```bash
+    pulumi preview
+    pulumi up
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+ 3. When you're finished, tear down your stack:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+    ```bash
+    pulumi destroy
+    pulumi stack rm
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ ## Project Layout
 
-## Deploy on Vercel
+ - `Pulumi.yaml` — Pulumi project and template metadata
+ - `index.ts` — Main Pulumi program (creates an S3 bucket)
+ - `package.json` — Node.js dependencies
+ - `tsconfig.json` — TypeScript compiler options
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ ## Configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+ | Key           | Description                             | Default     |
+ | ------------- | --------------------------------------- | ----------- |
+ | `aws:region`  | The AWS region to deploy resources into | `us-east-1` |
+
+ Use `pulumi config set <key> <value>` to customize configuration.
+
+ ## Next Steps
+
+ - Extend `index.ts` to provision additional resources (e.g., VPCs, Lambda functions, DynamoDB tables).
+ - Explore [Pulumi AWSX](https://www.pulumi.com/docs/reference/pkg/awsx/) for higher-level AWS components.
+ - Consult the [Pulumi documentation](https://www.pulumi.com/docs/) for more examples and best practices.
+
+ ## Getting Help
+
+ If you encounter any issues or have suggestions, please open an issue in this repository.

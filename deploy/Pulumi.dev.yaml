@@ -1,0 +1,4 @@
+config:
+  aws:region: us-east-1
+  next-deploy-poc:app: my-awesome-app
+  next-deploy-poc:environment: my-env

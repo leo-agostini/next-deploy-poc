@@ -1,0 +1,8 @@
+{
+  "app": "app1",
+  "environment": "clientA",
+  "envs": {
+    "NEXT_PUBLIC_APP_TITLE": "App 1",
+    "NEXT_PUBLIC_APP_DESCRIPTION": "Client A - App 1"
+  }
+}

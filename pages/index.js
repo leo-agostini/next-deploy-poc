@@ -1,7 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
-import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +25,7 @@ export default function Home() {
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
         <main className={styles.main}>
-          <Image
+          <img
             className={styles.logo}
             src="/next.svg"
             alt="Next.js logo"
@@ -48,7 +47,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
+              <img
                 className={styles.logo}
                 src="/vercel.svg"
                 alt="Vercel logomark"
@@ -73,7 +72,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               aria-hidden
               src="/file.svg"
               alt="File icon"
@@ -87,7 +86,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               aria-hidden
               src="/window.svg"
               alt="Window icon"
@@ -101,7 +100,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               aria-hidden
               src="/globe.svg"
               alt="Globe icon"
